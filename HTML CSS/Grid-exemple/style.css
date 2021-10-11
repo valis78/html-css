@@ -1,0 +1,35 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-color: #333;
+}
+
+.container{
+    display: grid;
+    max-width: 1440px;
+    margin: 60px auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 50px;
+}
+
+.container img{
+    width: 200px;
+    height: 200px;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }    
+}

@@ -1,0 +1,19 @@
+table,
+        th,
+        td {
+            margin-left: auto;
+            margin-right: auto;
+            border-width: 1px;
+            border-style: solid;
+            background-color: lightcyan;
+            vertical-align: text-top;
+        }
+
+        td {
+            text-align: center;
+            padding: 4px;
+        }
+
+        .plc {
+            background-color: lightgreen;
+        }

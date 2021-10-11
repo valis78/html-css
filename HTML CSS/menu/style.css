@@ -1,0 +1,58 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    background: #333;
+    font-family: sans-serif, 'Arial';
+}
+
+header{
+    width: 100%;
+    background: #181818;
+    height: 80px;
+    padding: 20px;
+}
+
+header nav{
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav .gauche a{
+    color: white;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 1.9em;
+    transition: 0.3s;
+}
+
+header nav .gauche a:hover{
+    color: rgb(161, 95, 223);
+}
+
+header nav .droite a{
+    color: white;
+    padding-left: 30px;
+    transition: 0.2s;
+    font-size: 1.2em;
+}
+
+header nav .droite a:hover{
+    color: rgb(102, 102, 214);
+}
+
+p {
+    color: white;
+    font-family: sans-serif;
+    margin-top: 20rem;
+    text-align: center;
+    font-size: 1.8em;
+}

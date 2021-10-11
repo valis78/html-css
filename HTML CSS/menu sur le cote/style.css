@@ -1,0 +1,111 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-color: #333;
+    color: white;
+}
+
+.menu-nav{
+    height: 100vh;
+    width: 70px;
+    background: #181818;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.dots{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.dot.rouge{
+    width: 10px; 
+    height: 10px; 
+    background: crimson; 
+    border-radius: 50%;
+}
+.dot.vert{
+    width: 10px; 
+    height: 10px; 
+    background: greenyellow; 
+    border-radius: 50%;
+}
+.dot.jaune{
+    width: 10px; 
+    height: 10px; 
+    background: yellow; 
+    border-radius: 50%;
+}
+
+.menu-link{
+    margin-top: 20px;
+}
+
+.menu-link .link{
+   text-align: center;
+   padding: 20px 0;
+   border-bottom: 2px solid rgb(83, 76, 76);
+   width: 70px;
+   transition: 0.2s;
+   cursor: pointer;
+}
+
+.link:hover{
+    background: #333;
+}
+
+.link ul{
+    width: 200px;
+    height: 100vh;
+    background: #181818;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.link ul h2{
+    font-family: sans-serif;
+    padding: 20px 0;
+}
+
+.link ul li{
+    padding: 15px 20px;
+}
+
+.link ul li:hover{
+    background: #333;
+}
+
+.link:hover ul{
+    transform: translateX(70px);
+}
+
+.link:hover i{
+    color: #00FFFF;
+}
+
+
+.link ul li a{
+    display: block;
+    text-align: left;
+    padding-top: 20px;
+    color: white;
+    font-family: sans-serif;
+}
+
+i{
+    font-size: 1.8em;
+    transition: 0.3s;
+}

@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700|Source+Sans+Pro:300,400,600,700&display=swap");
+
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-color: #373E57;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.container{
+    display: flex;
+    max-width: 1600px;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.container .sidebar{
+    width: 275px;
+    height: 100vh;
+    background: #151728;
+    padding: 15px;
+}
+
+.container .sidebar .title{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 6px;
+    font-size: 1.1em;
+}
+
+.container .sidebar .side-wrapper{
+    padding: 30px 0px;
+}
+
+.container .sidebar .side-wrapper .side-title{
+    color: rgb(139, 139, 139);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.container .sidebar .side-wrapper .side-link{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    white-space: nowrap;
+    color: #81839e;
+}
+
+.container .sidebar .side-wrapper .side-link a{
+    color: #747692;
+    padding: 15px 0;
+}
+
+.container .sidebar .side-wrapper .side-link a:hover{
+    color: white;
+}
+
+.container .sidebar .side-wrapper .side-link i{
+    font-size: 1.1em;
+    padding-right: 20px;
+}
+
+.container .sidebar .side-wrapper .side-link a span{
+    font-size: 1.1em;
+}
+
+/* main */
+
+.container .main{
+    background: #544859;
+    height: 100vh;
+    flex-grow: 1;
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+}
+
+.container .main .search{
+    width: 100%;
+    padding: 12px;
+    background: #151728;
+    color: white;
+    font-size: 1.1em;
+    font-family: 'Source Sans Pro', sans-serif;
+    border: none;
+    outline: none;
+}
+
+.container .main .content{
+    width: 100%;
+    padding: 20px;
+    margin: 3rem auto;
+    overflow: auto;
+}
+
+.container .main .content .profil{
+    width: 100%;
+    height: 270px;
+    background-image: url('./photo-1508247967583-7d982ea01526.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    position: relative;
+    cursor: pointer;
+}
+
+.container .main .content .profil .bas{
+    width: 100%;
+    background: #181818;
+    height: 80px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    position: absolute;
+    bottom: 0;
+}
+
+
+.container .main .content .profil .bas .pp .rond{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    position: absolute;
+    top: -100px;
+    left: 50px;
+    background-image: url('porto.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container .main .content .profil .bas .pp .rond .pseudo{
+    color: white;
+    right: -60px;
+    top: 20px;
+    font-weight: bold;
+    font-size: 1.4em;
+    position: absolute;
+}
+
+.container .main .content .profil .bas .about{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .main .content .profil .bas .about a{
+    padding: 30px;
+    color: rgb(94, 86, 86);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    transition: 0.3s;
+    position: relative;
+    text-align: center;
+}
+
+.container .main .content .profil .bas .about a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 0px;
+    background: rgb(95, 95, 231);
+}
+
+.container .main .content .profil .bas .about a:hover::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    background: rgb(95, 95, 231);
+}
+
+.container .main .content .profil .bas .about a:hover{
+    background: rgb(48, 48, 51);
+    color: white;
+}
+
+.container .main .content .left{
+    width: 40%;
+    margin-right: 15px;
+    margin-top: 3em;
+}
+
+.container .main .content .block-addresse{
+    width: 100%;
+    background: #181818;
+    border: 1px solid #181818;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.container .main .content .block-addresse .title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.container .main .content .block-addresse .title h2{
+    color: rgb(92, 88, 88);
+}
+
+.container .main .content .block-addresse .title .points{
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.container .main .content .block-addresse .lieu p{
+    color: white;
+    padding-top: 20px;
+    font-size: 1.1em;
+}
+
+.container .main .content .block-addresse .lieu p a{
+    color: rgb(64, 79, 216);
+}
+
+.container .main .content .right{
+    width: 60%;
+    margin-top: 3em;
+}
+/* fin */
+
+.container .finbar{
+    background: #151728;
+    height: 100vh;
+    width: 275px;
+}

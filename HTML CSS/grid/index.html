@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gridresponsive</title>
+    <style>
+            table,th,td {
+                margin-left:auto;
+                margin-right:auto;
+                border-width: 1px;
+                border-style:solid;
+                background-color: lightcyan;
+                vertical-align: text-top;
+            }
+            td,th {text-align:center;padding:4px;}
+            .conge {background-color:lightgreen} 
+            .demiconge {background-color:rgb(191, 209, 191)} 
+            #today {background-color:blueviolet;}
+
+        .conteneur{
+            background-color: aqua;
+            display: grid;
+            grid-template-columns: repeat(4,auto);
+            grid-gap: 10px;
+            grid-auto-rows: auto;
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 1250px) {
+            .conteneur{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+    </style>
+    <script>
+        function libellemois (m) {
+            if (m==1) return 'Janvier';
+            else if (m==2) return 'Février';
+            else if (m==3) return 'Mars';
+            else if (m==4) return 'Avril';
+            else if (m==5) return 'Mai';
+            else if (m==6) return 'Juin';
+            else if (m==7) return 'Juillet';
+            else if (m==8) return 'Aout';
+            else if (m==9) return 'Septembre';
+            else if (m==10) return 'Octobre';
+            else if (m==11) return 'Novembre';
+            else if (m==12) return 'Décembre';
+        }
+        function AfficherMois(annee,mois){
+           var d= new Date();
+         jourcourant= d.getDate();
+         moiscourant= d.getMonth();
+         ancourant= d.getFullYear();
+
+             d.setMonth(mois);
+            d.setFullYear(annee);
+            d.setDate(1);
+            //alert("Mois : "+d.getMonth()+ "   Annee : "+d.getFullYear() + "   Premier jour : " + d.getDay());
+            pj = d.getDay();
+            //alert(pj);
+            mc = d.getMonth();
+            st = "<table>";
+            st += '<caption>mois : '+(mois+1) + '/' + annee + '</caption>';
+            st += "<tr><th>Dim</th><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th>";
+            st += "<tr>";
+            if (pj>0) {
+                for (k=1;k<=pj;k++)
+                    st += "<td></td>";
+            }
+            for (j=1;j<=31;j++) {
+                if (((j+pj)%7)==1)
+                    st  +="<tr>";
+                d.setDate(j);
+                if (mc==d.getMonth()) {
+                    if (j==jourcourant && mois==moiscourant && annee==ancourant)
+                        st += "<td id=today>"+j+"</td>";
+                    else if (d.getDay()==0)
+                        st += "<td class=conge>"+j+"</td>";
+                    else if (d.getDay()==6)
+                        st += "<td class=demiconge>"+j+"</td>";
+                    else 
+                        st += "<td>"+j+"</td>";                           
+                }                
+            }
+            st += "</table>";
+            return st;
+        }
+
+        function RemplirCases(){
+            var an = new Date();
+            for (j2=1;j2<=12;j2++)
+                   document.getElementById("m"+j2).innerHTML= AfficherMois(an.getFullYear(),j2-1);
+        }
+
+       function DefenirConteneur(a){
+            st="";
+            for (j=1;j<=12;j++)
+                st+=" <div id='m"+j+"'></div>"
+
+            document.getElementById(a).innerHTML= st;
+            RemplirCases();
+        }
+            
+    </script>
+
+</head>
+<body onload=" DefenirConteneur('a');" >
+    <div class="conteneur" id=a>
+       
+    </div>
+    
+    
+ 
+
+</body>
+</html>

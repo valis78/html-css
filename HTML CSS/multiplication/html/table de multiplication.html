@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Table de multiplication</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script>
+        function afficherMult(iddiv) {
+            st = "<table><caption>Table de multiplication</caption>";
+            for (largeur = 1; largeur < 15; largeur++) {
+                st += "<tr>"
+                for (hauteur = 1; hauteur < 15; hauteur++)
+                    if (largeur == 1 || hauteur == 1)
+                        st += "<td class=plc>" + (largeur * hauteur) + "</td>";
+                    else
+                        st += "<td>" + (largeur * hauteur) + "</td>";
+                st += "</tr>";
+            }
+            st += "</table>";
+            document.getElementById(iddiv).innerHTML = st;
+        }
+    </script>
+</head>
+
+<body onload="afficherMult('a');">
+
+    <div id=a></div>
+
+</body>
+
+</html>
